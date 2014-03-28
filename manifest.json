@@ -21,7 +21,8 @@
         "http://*/*", "https://*/*"
       ],
       "js": [
-        "js/jquery/jquery.js", 
+        "js/jquery/jquery.js",
+        "js/jquery.hotkeys.js",
         "src/inject/inject.js"
       ],
       "run_at": "document_idle",

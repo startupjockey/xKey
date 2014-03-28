@@ -31,7 +31,7 @@
   ],
   "background" : {
     "persistent": false,
-    "scripts": ["src/background/background.js"]
+    "page": "src/background/background.html"
   },
   "browser_action": {
       "default_title": "xKey - Shortcut keys",

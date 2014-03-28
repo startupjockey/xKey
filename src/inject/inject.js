@@ -6,23 +6,32 @@ chrome.runtime.sendMessage({
     subject: "showPageAction"
 });
 */
+
+var settings = {};
+
+chrome.runtime.sendMessage({from: "inject", subject: "settings"}, function(response) {
+  settings = response.data;
+});
+
 /* Listen for message from the popup */
 chrome.runtime.onMessage.addListener(function(msg, sender, response) {
     /* First, validate the message's structure */
     if (msg.from && (msg.from === "popup") && msg.subject && (msg.subject === "listKeys")) {
 		var accessKeyPrefix = '';
-		// Find the platform access key prefix
-		var platform = window.navigator.platform;
-		if(platform.match(/win/i)) {
-			accessKeyPrefix = 'Alt + ';
-		} else if (platform.match(/free/i)) {
-			accessKeyPrefix = 'Alt + ';
-		} else if (platform.match(/linux/i)) {
-			accessKeyPrefix = 'Alt + ';
-		} else if (platform.match(/mac/i)) {
-			accessKeyPrefix = 'Control + Option + ';
-		} else {
-			accessKeyPrefix = 'Alt + ';
+		if(settings.mode == 'default') {
+			// Find the platform access key prefix
+			var platform = window.navigator.platform;
+			if(platform.match(/win/i)) {
+				accessKeyPrefix = 'Alt + ';
+			} else if (platform.match(/free/i)) {
+				accessKeyPrefix = 'Alt + ';
+			} else if (platform.match(/linux/i)) {
+				accessKeyPrefix = 'Alt + ';
+			} else if (platform.match(/mac/i)) {
+				accessKeyPrefix = 'Control + Option + ';
+			} else {
+				accessKeyPrefix = 'Alt + ';
+			}
 		}
 
 		// Get all accesskeys that are defined for a-links

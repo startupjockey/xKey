@@ -6,7 +6,6 @@ chrome.runtime.sendMessage({
     subject: "showPageAction"
 });
 */
-
 /* Listen for message from the popup */
 chrome.runtime.onMessage.addListener(function(msg, sender, response) {
     /* First, validate the message's structure */
@@ -43,3 +42,17 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response) {
     }
 });
 
+var readyStateCheckInterval = setInterval(function() {
+	if (document.readyState === "complete") {
+		clearInterval(readyStateCheckInterval);
+
+		// For each action for accesskey; define a bind event on document and an handler to trigger key press
+		jQuery('a[accesskey]').each(function(index) {
+			$(document).bind('keydown', this.getAttribute('accesskey'), function(e) {
+				// e.data.keys - returns the actual char
+				// e.keyCode - returns the keyCode (but not the acii code so we can't differentiate between lower and upper case)
+				jQuery('a[accesskey='+e.data.keys+']')[0].click();
+			});
+		})
+	}
+}, 10);

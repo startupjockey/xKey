@@ -31,7 +31,7 @@
     "persistent": false,
     "scripts": ["src/background/background.js"]
   },
-  "page_action": {
+  "browser_action": {
       "default_title": "xKey - Shortcut keys",
       "default_icon": {
           "19": "icons/icon19.png",

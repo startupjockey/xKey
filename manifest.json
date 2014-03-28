@@ -1,0 +1,28 @@
+{
+  "name": "xKey : Create shortcut keys for any website",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Make websites more accessible from the keyboard",
+  "homepage_url": "http://github.com/startupjockey/xKey",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "options_page": "src/options_custom/index.html",
+  "permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}

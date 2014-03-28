@@ -1,10 +1,16 @@
 /* Update the relevant fields with the new data */
 function dispKeys(accessKeyMap) {
-    var shortcut = document.getElementById("shortcuts");
-    for(var i = 0; i<accessKeyMap.length; i++) {
-        var node = document.createElement('tr');
-        node.innerHTML = '<td>'+ accessKeyMap[i].label +'</td><td>'+accessKeyMap[i].key+'</td>';
-        shortcut.appendChild(node);
+    if(accessKeyMap.length > 0) {
+
+        var shortcut = document.getElementById("shortcuts");
+        var no_access = document.getElementById("no-access");
+        no_access.parentNode.removeChild(no_access);
+
+        for(var i = 0; i<accessKeyMap.length; i++) {
+            var node = document.createElement('tr');
+            node.innerHTML = '<td>'+ accessKeyMap[i].label +'</td><td>'+accessKeyMap[i].key+'</td>';
+            shortcut.appendChild(node);
+        }
     }
 }
 

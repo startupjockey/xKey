@@ -6,7 +6,7 @@
             body {
                 font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;font-size:12px;
             }
-            #shortcuts{
+            #shortcuts, #custom-shortcuts{
                 font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
                 font-size:11px;
                 width:480px;
@@ -16,13 +16,13 @@
                 margin:20px;
             }
 
-            #shortcuts th{
+            #shortcuts th, #custom-shortcuts th{
                 font-weight:bold;font-size:11px;color:#333;
                 border-bottom:1px dashed #333;
                 padding:12px 17px;
             }
 
-            #shortcuts td{
+            #shortcuts td, #custom-shortcuts td{
                 color:#666;
                 padding:7px 17px;
             }
@@ -41,12 +41,12 @@
         </table>
 
         <h3 style="font-weight:bold; text-align:center;">xKey - Shortcuts</h3>
-        <table id="shortcuts" style="width: 350px;">
+        <table id="custom-shortcuts" style="width: 350px;">
             <tr>
                 <th>Key Combination</th>
                 <th>Function</th>
             </tr>
-            <tr>
+            <tr id="no-custom-access">
                 <td colspan="2">No xKey shortcuts are defined by you for this website. You can define them thorugh the Options page</td>
             </tr>
         </table>

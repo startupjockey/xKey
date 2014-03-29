@@ -1,5 +1,7 @@
 /* Update the relevant fields with the new data */
-function dispKeys(accessKeyMap) {
+function dispKeys(resp) {
+    console.log(resp);
+    var accessKeyMap = resp.access;
     if(accessKeyMap.length > 0) {
 
         var shortcut = document.getElementById("shortcuts");
@@ -9,6 +11,20 @@ function dispKeys(accessKeyMap) {
         for(var i = 0; i<accessKeyMap.length; i++) {
             var node = document.createElement('tr');
             node.innerHTML = '<td>'+ accessKeyMap[i].label +'</td><td>'+accessKeyMap[i].key+'</td>';
+            shortcut.appendChild(node);
+        }
+    }
+
+    var customaccessKeyMap = resp.custom;
+    if(customaccessKeyMap.length > 0) {
+
+        var shortcut = document.getElementById("custom-shortcuts");
+        var no_access = document.getElementById("no-custom-access");
+        no_access.parentNode.removeChild(no_access);
+
+        for(var i = 0; i<customaccessKeyMap.length; i++) {
+            var node = document.createElement('tr');
+            node.innerHTML = '<td>'+ customaccessKeyMap[i].label +'</td><td>'+customaccessKeyMap[i].key+'</td>';
             shortcut.appendChild(node);
         }
     }

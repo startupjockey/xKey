@@ -65,21 +65,22 @@ var readyStateCheckInterval = setInterval(function() {
 			});
 		});
 
-		//console.log(settings.website1);
+		customaccessKeyMap = [];
+
+		
 		// Check for custom xKey shortcuts
 		var custom1 = settings.website1;
 		var domain = custom1.split('|')[0];
-
-		customaccessKeyMap = [];
+		
 		
 		if(window.document.location.host.match(domain)) {
-			console.log('in2');
+			
 			var patterns = custom1.split('|')[1].split(';');
 			jQuery(patterns).each(function(index) {
 				var accessKey = {};
 				accessKey.label = this.split('=')[0];
 				var rgx = this.split('=')[1];
-				console.log(rgx);
+				
 				accessKey.rgx = rgx;
 				if(jQuery(rgx).length) {
 					accessKey.key = jQuery(rgx)[0].textContent;	
@@ -87,15 +88,15 @@ var readyStateCheckInterval = setInterval(function() {
 				}
 			});
 
-			console.log(customaccessKeyMap);
+			
 			for(var i =0; i < customaccessKeyMap.length; i++) {
-				console.log('Binding event for ' + customaccessKeyMap[i].label);
+				
 				$(document).bind('keydown', customaccessKeyMap[i].label, function(e) {
-					console.log(e.data.keys);
+					
 					for(var i =0; i < customaccessKeyMap.length; i++) {
-						console.log(customaccessKeyMap[i].label);
+						
 						if(customaccessKeyMap[i].label == e.data.keys) {
-							console.log('For the bind, trigger the following ' + customaccessKeyMap[i].rgx);
+							
 							jQuery(customaccessKeyMap[i].rgx)[0].click();
 						}
 					}
@@ -103,5 +104,86 @@ var readyStateCheckInterval = setInterval(function() {
 				
 			}
 		}
+
+		custom1 = settings.website2;
+		domain = custom1.split('|')[0];
+		
+		
+		if(window.document.location.host.match(domain)) {
+			
+			var patterns = custom1.split('|')[1].split(';');
+			jQuery(patterns).each(function(index) {
+				var accessKey = {};
+				accessKey.label = this.split('=')[0];
+				
+				var rgx = this.split('=')[1];
+				
+				accessKey.rgx = rgx;
+				
+				if(jQuery(rgx).length) {
+					accessKey.key = jQuery(rgx)[0].textContent;	
+					
+					customaccessKeyMap.push(accessKey);
+				}
+			});
+
+			
+			for(var i =0; i < customaccessKeyMap.length; i++) {
+				
+				$(document).bind('keydown', customaccessKeyMap[i].label, function(e) {
+					
+					for(var i =0; i < customaccessKeyMap.length; i++) {
+						
+						if(customaccessKeyMap[i].label == e.data.keys) {
+							
+							jQuery(customaccessKeyMap[i].rgx)[0].click();
+						}
+					}
+				});
+				
+			}
+		}
+
+
+		custom1 = settings.website3;
+		domain = custom1.split('|')[0];
+		
+		
+		if(window.document.location.host.match(domain)) {
+			
+			var patterns = custom1.split('|')[1].split(';');
+			jQuery(patterns).each(function(index) {
+				var accessKey = {};
+				accessKey.label = this.split('=')[0];
+				
+				var rgx = this.split('=')[1];
+				
+				accessKey.rgx = rgx;
+				
+				if(jQuery(rgx).length) {
+					accessKey.key = jQuery(rgx)[0].textContent;	
+					console.log(accessKey.key);
+					customaccessKeyMap.push(accessKey);
+				}
+			});
+
+			
+			for(var i =0; i < customaccessKeyMap.length; i++) {
+				
+				$(document).bind('keydown', customaccessKeyMap[i].label, function(e) {
+					
+					for(var i =0; i < customaccessKeyMap.length; i++) {
+						
+						if(customaccessKeyMap[i].label == e.data.keys) {
+							
+							jQuery(customaccessKeyMap[i].rgx)[0].click();
+						}
+					}
+				});
+				
+			}
+		}
+
+
 	}
 }, 10);

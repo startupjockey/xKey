@@ -15,16 +15,16 @@ _Description: Chrome extension to discover new web accessibility shortcuts and t
 1. Install the extension in 'Developer Mode' on Chrome
 
 2. Configure options
-https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/2.png
+![](https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/2.png)
 
 3. Defalut web accesibility mode
-https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/3-default-mode.png
+![](https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/3-default-mode.png)
 
 4. GOD mode (vi mode) for the same accesibility shortcuts
-https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/3-GOD-vi-mode.png
+![](https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/3-GOD-vi-mode.png)
 
 5. Define Custom xKeys for 3 websites
-https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/5-linkedin-custom.png
+![](https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/5-linkedin-custom.png)
 
 ## Credits
 

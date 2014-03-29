@@ -1,4 +1,4 @@
-# _xKey - _
+# _xKey_
 
 _Description: Chrome extension to discover new web accessibility shortcuts and to create new shortcuts for our favorite web apps._
 
@@ -11,16 +11,20 @@ _Description: Chrome extension to discover new web accessibility shortcuts and t
 
 ## Screenshots
 
-
+![](https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/1.png)
 1. Install the extension in 'Developer Mode' on Chrome
 
 2. Configure options
+https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/2.png
 
 3. Defalut web accesibility mode
+https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/3-default-mode.png
 
 4. GOD mode (vi mode) for the same accesibility shortcuts
+https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/3-GOD-vi-mode.png
 
 5. Define Custom xKeys for 3 websites
+https://raw.githubusercontent.com/startupjockey/xKey/master/screenshots/5-linkedin-custom.png
 
 ## Credits
 
